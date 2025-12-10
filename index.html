@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BoemKlatsHits.nl — Dweilorkest arrangementen</title>
+  <meta name="description" content="Grappige winkel voor dweilorkest-arrangementen — previews, audio en downloads." />
+  <style>
+    :root{
+      --bg:#fbf5ee;
+      --primary:#d9381e; /* warm red/orange */
+      --accent:#ffb500; /* yellow */
+      --dark:#111;
+      --muted:#262626; /* slightly darker for contrast */
+      --card:#fff;
+      --shadow: 0 6px 20px rgba(0,0,0,0.12);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      --focus: 3px solid rgba(217,56,30,0.18);
+    }
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#ffe9d8 0%, #fff 60%);color:var(--dark)}
+    .wrap{max-width:1080px;margin:20px auto;padding:28px}
+    /* Skip link */
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:auto;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+    .skip-link:focus{
+      left:12px;
+      top:12px;
+      width:auto;
+      height:auto;
+      padding:8px 12px;
+      background:#000;
+      color:#fff;
+      border-radius:6px;
+      z-index:1000;
+    }
+
+    header{display:flex;align-items:center;gap:18px}
+    .logo-box{width:110px;height:110px;flex:0 0 110px;border-radius:18px;overflow:visible;display:flex;align-items:center;justify-content:center}
+    /* make it cut nicely for round stickers: center contains a circular safe area */
+    .logo-box img{width:110px;height:110px;object-fit:cover;border-radius:18px}
+    .brand{flex:1}
+    h1{margin:0;font-size:28px;letter-spacing:0.6px}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    /* hero */
+    .hero{background:linear-gradient(135deg, rgba(217,56,30,0.08), rgba(255,181,0,0.04));border-radius:16px;padding:18px;margin-top:18px;display:flex;gap:20px;align-items:center}
+    .hero .left{flex:1}
+    .hero .cta{display:flex;gap:12px;margin-top:12px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;box-shadow:var(--shadow);border:none;background:none;cursor:pointer}
+    .btn-primary{background:var(--primary);color:white}
+    .btn-ghost{background:transparent;border:2px solid var(--primary);color:var(--primary)}
+
+    /* focus styles */
+    .btn:focus, a.btn:focus, .card:focus { outline: none; box-shadow: var(--focus); border-radius:10px; }
+    .card:focus { transform: translateY(-2px); transition: transform .12s ease; }
+
+    /* gallery / arrangements */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px}
+    .card{background:var(--card);border-radius:12px;padding:14px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+    .thumb{height:140px;border-radius:8px;background:linear-gradient(180deg,#fff,#f7f7f7);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted)}
+    .meta{display:flex;justify-content:space-between;align-items:center}
+    .price{font-weight:700;color:var(--primary)}
+    audio{width:100%;margin-top:6px}
+
+    footer{margin-top:30px;padding:18px;text-align:center;color:var(--muted);font-size:14px}
+
+    /* responsive smaller */
+    @media (max-width:560px){.logo-box{width:86px;height:86px}.brand h1{font-size:20px}}
+
+    /* styles to make the square image safe to crop as round sticker: ensure content centered */
+    .logo-safe{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+    .logo-safe img{border-radius:50%;width:92%;height:92%;object-fit:cover}
+
+    /* playful accents */
+    .badge{display:inline-block;background:var(--accent);color:#111;padding:6px 10px;border-radius:999px;font-weight:700}
+
+    /* small contact form */
+    form.contact{display:flex;flex-direction:column;gap:8px}
+    label{font-size:13px;color:var(--muted)}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid #ddd;font-size:15px}
+    .visually-hidden{position:absolute !important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
+    /* small helpers */
+    .muted{color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#maincontent">Sla naar inhoud</a>
+
+  <div class="wrap">
+    <header role="banner">
+      <div class="logo-box" aria-hidden="false">
+        <!-- Replace 'logo.png' with your provided drum image file. Keep square. -->
+        <div class="logo-safe"><img src="logo.png" alt="BoemKlatsHits logo — trommel met confetti" /></div>
+      </div>
+      <div class="brand">
+        <h1>BoemKlatsHits.nl <span style="font-size:14px;color:var(--muted);font-weight:600">Dweilorkest-arrangementen</span></h1>
+        <p class="lead">Grappige, feestelijke arrangementen — previews, bladmuziek en downloads. Klaar voor confetti!</p>
+      </div>
+      <div style="text-align:right">
+        <div class="badge" aria-hidden="true">Carnaval-ready</div>
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="left">
+        <h2 id="hero-heading">Feestmuziek voor ieder dweilorkest</h2>
+        <p>Binnenkort verkrijgbaar: 4 spetterende arrangementen. Luister previews, bekijk bladmuziek en download na betaling.</p>
+        <div class="cta">
+          <button class="btn btn-primary" id="view-arr" type="button">Bekijk arrangementen</button>
+          <button class="btn btn-ghost" id="listen-all" type="button">Luister previews</button>
+        </div>
+      </div>
+      <div style="width:240px;text-align:center">
+        <img src="logo.png" alt="BoemKlatsHits logo" style="width:160px;height:160px;border-radius:12px;object-fit:cover;box-shadow:var(--shadow)" />
+      </div>
+    </section>
+
+    <main id="maincontent" role="main" aria-labelledby="arrangements-heading">
+      <h3 id="arrangements-heading" style="margin-top:28px">Arrangementen</h3>
+      <div class="grid" id="arr-grid" role="list">
+        <!-- Cards injected by JS -->
+      </div>
+
+      <section style="margin-top:22px" aria-labelledby="contact-heading">
+        <h3 id="contact-heading">Contact</h3>
+        <form class="contact" action="https://formspree.io/f/your-form-id" method="POST" aria-describedby="contact-desc">
+          <p id="contact-desc" class="visually-hidden">Vul naam en e-mail in en beschrijf je interesse. We nemen contact op via e-mail.</p>
+
+          <div>
+            <label for="name">Naam</label>
+            <input id="name" name="name" placeholder="Naam" required aria-required="true" />
+          </div>
+
+          <div>
+            <label for="email">E‑mail</label>
+            <input id="email" name="email" placeholder="E-mail" type="email" required aria-required="true" />
+          </div>
+
+          <div>
+            <label for="message">Bericht (bv. interesse in arrangement X)</label>
+            <textarea id="message" name="message" rows="4" placeholder="Bericht (bv. interesse in arrangement X)"></textarea>
+          </div>
+
+          <div style="display:flex;gap:8px">
+            <button class="btn btn-primary" type="submit">Stuur bericht</button>
+            <button class="btn btn-ghost" type="button" id="email-me">E-mail mij</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      © <span id="year"></span> BoemKlatsHits.nl — Made with trommelgroove 🥁
+    </footer>
+  </div>
+
+  <script>
+    // Data model: placeholder arrangements. Replace with real data when available.
+    const arrangements = [
+      {id:1,title:'Boemklats March',genre:'Feest',price:19.5,preview:'samples/preview1.mp3',thumb:'',desc:'Opzwepend marsarrangement - perfect voor optochten.'},
+      {id:2,title:'Feest in de Tent',genre:'Carnaval',price:17.5,preview:'samples/preview2.mp3',thumb:'',desc:'Klap mee! Hoge energie en meezing-waardige refreinen.'},
+      {id:3,title:'Polka Klat',genre:'Polka',price:14.5,preview:'samples/preview3.mp3',thumb:'',desc:'Oud-klassiek met een moderne twist.'},
+      {id:4,title:'Late Night Lawaai',genre:'Pop',price:21.0,preview:'samples/preview4.mp3',thumb:'',desc:'Popmedleys bewerkt voor straatorkesten.'}
+    ];
+
+    const grid = document.getElementById('arr-grid');
+    function money(n){return '€'+n.toFixed(2)}
+
+    // Build accessible cards
+    arrangements.forEach(a=>{
+      const article = document.createElement('article');
+      article.className = 'card';
+      article.setAttribute('role','listitem');
+      article.setAttribute('tabindex','0');
+
+      // unique ids for aria
+      const titleId = `arr-title-${a.id}`;
+      const descId = `arr-desc-${a.id}`;
+
+      article.innerHTML = `
+        <div class="thumb" aria-hidden="true">🎵</div>
+        <div>
+          <h4 id="${titleId}" style="margin:0;">${a.title}</h4>
+          <div id="${descId}" class="muted">${a.genre} — ${a.desc}</div>
+        </div>
+        <div class="meta"><div class="price">${money(a.price)}</div><div class="muted">1 partij + lead</div></div>
+        <div>
+          <audio controls preload="none" aria-describedby="${descId}">
+            <source src="${a.preview}" type="audio/mpeg">
+            Je browser ondersteunt audio niet.
+          </audio>
+          <p class="muted" style="margin:6px 0 0;font-size:13px">Transcript / download: <a href="#" data-transcript-id="${a.id}" class="muted">Nog beschikbaar</a></p>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:6px">
+          <button class="btn btn-primary buy" data-id="${a.id}" type="button" aria-label="Koop ${a.title} voor ${money(a.price)}">Koop</button>
+          <button class="btn btn-ghost preview-pdf" data-id="${a.id}" type="button" aria-label="Bekijk PDF preview van ${a.title}">Bekijk PDF</button>
+        </div>
+      `;
+      grid.appendChild(article);
+    });
+
+    function purchase(id){
+      // placeholder: integrate Gumroad or Stripe here. For now open a demo page.
+      alert('Koop-functie nog niet geactiveerd. Ik kan Gumroad-embeds toevoegen of Stripe Checkout integreren wanneer je wilt.');
+      // Example: window.open('https://gum.co/yourproduct','_blank');
+    }
+    function previewPDF(id){
+      alert('PDF-preview nog niet toegevoegd. Upload je PDF in /public/pdf/ en update de links.');
+    }
+
+    // Event delegation for card buttons
+    document.addEventListener('click', function(e){
+      const buy = e.target.closest('.buy');
+      if(buy){
+        const id = buy.getAttribute('data-id');
+        purchase(id);
+      }
+      const preview = e.target.closest('.preview-pdf');
+      if(preview){
+        const id = preview.getAttribute('data-id');
+        previewPDF(id);
+      }
+      const tlink = e.target.closest('[data-transcript-id]');
+      if(tlink){
+        e.preventDefault();
+        alert('Transcript / download nog niet geüpload. Voeg transcript.txt of PDF in /pdf/ en update de link.');
+      }
+    });
+
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('view-arr').addEventListener('click',()=>{document.querySelector('#arr-grid').scrollIntoView({behavior:'smooth',block:'start'})});
+    document.getElementById('listen-all').addEventListener('click',()=>{
+      // play first audio element and focus it — don't autoplay multiple audios at once
+      const first = document.querySelector('#arr-grid audio');
+      if(first){
+        first.focus();
+        first.play().catch(()=>{/* ignore play error if blocked */});
+      } else {
+        alert('Geen previews gevonden. Upload audio-bestanden in /samples/');
+      }
+    });
+    document.getElementById('email-me').addEventListener('click',()=>{window.location.href='mailto:you@yourdomain.nl'});
+
+    // Notes for you:
+    // - Replace 'logo.png' with the provided square logo image in the same folder as this index.html.
+    // - Put audio previews in /samples/preview1.mp3 ... or update the 'preview' fields in the arrangements array.
+    // - Provide transcripts or captions for audio (e.g. /transcripts/preview1.txt) and update the transcript links.
+    // - Put PDF previews or images in /pdf/ and update previewPDF() to open them.
+    // - To accept payments: (A) Gumroad -> create products and embed buy buttons (easy), or (B) Stripe -> requires server-side integration / serverless function for Checkout.
+  </script>
+</body>
+</html>
